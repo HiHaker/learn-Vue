@@ -5,17 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="./lib/vue.js"></script>
+    <style>
+            [v-cloak]{
+                display: none;
+            }
+        </style>
 </head>
 <body>
     <div id="app">
-        <p>{{ msg }}</p>
+        <!-- 使用v-cloak能够解决插值表达式闪烁的问题 -->
+        <p v-cloak>{{ msg }}</p>
+        <!-- 默认v-text是没有闪烁问题的 -->
+        <!-- v-text会覆盖元素中原本的内容，但是插值表达式只会替换占位符，不会把整个内容清空 -->
+        <h4 v-text="msg"></h4>
+        <div>{{msg2}}</div>
+        <div v-text="msg2"></div>
+        <div v-html="msg2"></div>
     </div>
+    <script src="./lib/vue.js"></script>
     <script>
         var vm = new Vue({
             el: '#app',
             data: {
-                msg: '123'
+                msg: '123',
+                msg2: '<h1>我是一个大大的h1，哈哈</h1>'
             }
         })
     </script>
