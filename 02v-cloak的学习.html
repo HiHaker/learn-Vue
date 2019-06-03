@@ -21,6 +21,11 @@
         <div>{{msg2}}</div>
         <div v-text="msg2"></div>
         <div v-html="msg2"></div>
+
+        <!-- v-bind 是vue中用于绑定属性的指令, v-bind将双引号里面的变量当作js表达式去进行解析 -->
+        <!-- <input type="button" value="按钮" v-bind:title="myTitle"> -->
+        <!-- 下面是上述写法的语法糖,只有一个冒号 -->
+        <input type="button" value="按钮" :title="myTitle">
     </div>
     <script src="./lib/vue.js"></script>
     <script>
@@ -28,7 +33,8 @@
             el: '#app',
             data: {
                 msg: '123',
-                msg2: '<h1>我是一个大大的h1，哈哈</h1>'
+                msg2: '<h1>我是一个大大的h1，哈哈</h1>',
+                myTitle: '这是一个自己定义的Title'
             }
         })
     </script>
