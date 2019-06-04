@@ -25,7 +25,13 @@
         <!-- v-bind 是vue中用于绑定属性的指令, v-bind将双引号里面的变量当作js表达式去进行解析 -->
         <!-- <input type="button" value="按钮" v-bind:title="myTitle"> -->
         <!-- 下面是上述写法的语法糖,只有一个冒号 -->
-        <input type="button" value="按钮" :title="myTitle">
+        <!-- <input type="button" value="按钮" :title="myTitle + '123'"> -->
+
+        <!-- vue中提供了v-on:事件绑定机制 -->
+        <!-- <input type="button" value="按钮" :title="myTitle + '123'" v-on:click="alert('Hello')"> -->
+
+        <input type="button" value="按钮" v-on:click="show">
+
     </div>
     <script src="./lib/vue.js"></script>
     <script>
@@ -35,8 +41,23 @@
                 msg: '123',
                 msg2: '<h1>我是一个大大的h1，哈哈</h1>',
                 myTitle: '这是一个自己定义的Title'
+            },
+            methods: { // 这个methods属性中定义了当前vue实例所有可用的方法
+                show: function(){
+                    alert('Hello')
+                }
             }
         })
+
+        // document.getElementById('btn').onclick = function(){
+        //     alert('Hello')
+        // }
     </script>
 </body>
 </html>
+
+
+<!-- 1、如何定义一个基本的vue代码结构 -->
+<!-- 2、v-cloak v-text 差值表达式 v-html -->
+<!-- 3、v-bind vue提供的属性绑定机制 （缩写是冒号） -->
+<!-- 3、v-on vue提供的事件绑定机制 （缩写是@）-->
