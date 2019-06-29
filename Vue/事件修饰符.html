@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../lib/vue.js"></script>
+    <style>
+        .inner{
+            height: 150px;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="inner" @click="divHandler">
+            <!-- 使用 .stop 阻止冒泡 -->
+            <input type="button" value="戳他" @click="btnHandler">
+        </div>
+    </div>
+    <script>
+        // 创建Vue实例，得到vueModel
+        var vm = new Vue({
+            el: '#app',
+            data: {},
+            methods: {
+                divHandler(){
+                    console.log('这是触发了 inner div的点击事件')
+                },
+                btnHandler(){
+                    console.log('这是触发了按钮的点击事件')
+                }
+            }
+        });
+    </script>
+</body>
+</html>
