@@ -15,10 +15,29 @@
 </head>
 <body>
     <div id="app">
-        <div class="inner" @click="divHandler">
+        <!-- <div class="inner" @click="divHandler"> -->
             <!-- 使用 .stop 阻止冒泡 -->
+            <!-- javascript的冒泡机制，从当前DOM元素顺着树往上冒 -->
+            <!-- <input type="button" value="戳他" @click.stop="btnHandler"> -->
+        <!-- </div> -->
+
+        <!-- 使用.prevent阻止默认行为 -->
+        <!-- <a href="http://www.bing.com" @click.prevent="linkClick">有问题，先搜索</a> -->
+
+        <!-- 使用.capture 捕获事件 -->
+        <!-- <div class="inner" @click.capture="divHandler">
             <input type="button" value="戳他" @click="btnHandler">
-        </div>
+        </div> -->
+
+        <!-- 使用.self实现只有点击当前元素时，才会触发事件 -->
+        <!-- <div class="inner" @click.self="divHandler">
+            <input type="button" value="戳他" @click="btnHandler">
+        </div> -->
+
+        <!-- 使用.once只触发一次事件函数 -->
+        <!-- <a href="http://www.bing.com" @click.prevent.once="linkClick">有问题，先搜索</a> -->
+
+        <!-- self 和 stop 的区别，stop阻止冒泡，self只阻止当前元素冒泡 -->
     </div>
     <script>
         // 创建Vue实例，得到vueModel
@@ -31,6 +50,9 @@
                 },
                 btnHandler(){
                     console.log('这是触发了按钮的点击事件')
+                },
+                linkClick(){
+                    console.log('触发了连接的点击事件')
                 }
             }
         });
