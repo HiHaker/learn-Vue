@@ -1,0 +1,29 @@
+{
+	"vue-html template": {
+		"prefix": "vh",
+		"body": [
+		  "<!DOCTYPE html>",
+		  "<html lang=\"en\">\n",
+		  "<head>",
+		  "\t<meta charset=\"UTF-8\">",
+		  "\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+		  "\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">",
+		  "\t<title>Document</title>",
+		  "\t<script src=\"../lib/vue.js\"></script>",
+		  "</head>\n",
+		  "<body>\n",
+		  "\t<div id=\"app\"></div>\n",
+		  "\t<script>",
+		  "\t\t// 创建Vue实例，得到viewmodel",
+		  "\t\tvar vm = new Vue({",
+		  "\t\t\tel: '#app',",
+		  "\t\t\tdata: {},",
+		  "\t\t\tmethods: {}",
+		  "\t\t});",
+		  "\t</script>",
+		  "</body>\n",
+		  "</html>"
+		],
+		"description": "The full sample code - html5."
+	  }
+}
