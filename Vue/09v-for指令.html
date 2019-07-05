@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script src="../lib/vue.js"></script>
+<body>
+    <div id="app">
+        <!-- 循环数组 -->
+        <!-- v-for标签，注意双引号里面的命名 -->
+        <!-- <p v-for="item in list">{{item}}</p> -->
+        <!-- 注意双引号里面的命名 -->
+        <!-- <p v-for="(item, i) in list">索引值是{{i}}---每一项是{{item}}</p> -->
+
+        <!-- 循环对象数组 -->
+        <!-- <p v-for="user in list">{{user.id}} {{user.name}}</p> -->
+
+        <!-- 循环对象 -->
+        <!-- 注意：在遍历对象身上键值对时，除了有key,value 还有索引值 -->
+        <!-- <P v-for="(val, key) in user">值是:{{val}} 键是{{key}}</P> -->
+
+        <!-- 迭代数字 -->
+        <!-- in 后面放置过普通数组，对象，数字 -->
+        <!-- 注意，如果使用v-for迭代数字，count值从1开始 -->
+        <p v-for="count in 10">{{这是第 {{count}} 次循环}}</p>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                // list: [1,2,3,4,5,6]
+                // list: [
+                //     { id:1, name:'zs1' },
+                //     { id:2, name:'zs2' },
+                //     { id:3, name:'zs3' },
+                //     { id:4, name:'zs4' }
+                // ]
+                // user: {
+                //     id: 1,
+                //     name: '托尼',
+                //     gender: '男'
+                // }
+            },
+            methods: {}
+        });
+    </script>
+</body>
+</html>
