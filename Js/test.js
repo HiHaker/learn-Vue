@@ -45,15 +45,15 @@
 
 // 
 
-function fun(){
-    console.log(this);
-}
+// function fun(){
+//     console.log(this);
+// }
 
-// fun();
+// // fun();
 
-var obj = {
-    name:"lala",
-    sayName:fun
-}
+// var obj = {
+//     name:"lala",
+//     sayName:fun
+// }
 
-obj.sayName();
+// obj.sayName();
